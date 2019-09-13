@@ -1,14 +1,18 @@
 """
 https://codeforces.com/problemset/problem/977/C
 
-You are given a sequence of integers of length n and integer number k. You should print any integer number x in the range of [1;10^9] (i.e. 1≤x≤10^9) such that exactly k elements of given sequence are less than or equal to x.
+You are given a sequence of integers of length n and integer number k.
+You should print any integer number x in the range of [1;10^9] (i.e. 1≤x≤10^9)
+such that exactly k elements of given sequence are less than or equal to x.
 """
 
 """
 Accepted
-Time Complexity : O(nlogn).
-Space Complexity : O(1).
-Solution Explanation : Sort the sequence and find the kth largest number. Iterate over the array to ensure that this number is not bloated by duplicates.
+Time Complexity: O(nlogn).
+Space Complexity: O(1).
+Solution Explanation:
+    Sort the sequence and find the kth largest number.
+    Iterate over the array to ensure that this number is not bloated by duplicates.
 """
 from sys import stdin, stdout
 
@@ -35,9 +39,14 @@ def kth_largest_integer(k: int, sequence) -> int:
 
 def kth_largest_integer_no_duplicates(k: int, sequence) -> int:
     """
-    Time Complexity : O(n).
-    Space Complexity : O(1).
-    Solution Explantion : Using an algorithm based off of quick sort, we are partitioning the array several times to try and select the kth largest integer in the array. When partitioning, we use a unique algorithm to ensure that the partition can happen in O(end - start) time via swapping larger elements to the end of the array and moving the partiotion forward when considering smaller elements. Unfortunately, I couldn't get this solution to account for duplicates any faster than O(nlogn) so I abandoned it for now.
+    Solution Explantion :
+        Using an algorithm based off of quick sort, we are partitioning the array several times
+        to try and select the kth largest integer in the array. When partitioning, we use a
+        unique algorithm to ensure that the partition can happen in O(end - start) time via
+        swapping larger elements to the end of the array and moving the partiotion forward when
+        considering smaller elements.
+
+    Unfortunately, I couldn't get this solution to account for duplicates any faster than O(nlogn) so I abandoned it for now.
     """
     start = 0
     end = len(sequence) - 1

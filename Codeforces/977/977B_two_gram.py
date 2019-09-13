@@ -1,17 +1,22 @@
 """
 https://codeforces.com/problemset/problem/977/B
 
-Two-gram is an ordered pair (i.e. string of length two) of capital Latin letters. For example, "AZ", "AA", "ZA" — three distinct two-grams.
+Two-gram is an ordered pair (i.e. string of length two) of capital Latin letters.
+For example, "AZ", "AA", "ZA" — three distinct two-grams.
 
-You are given a string s
-consisting of n capital Latin letters. Your task is to find any two-gram contained in the given string as a substring (i.e. two consecutive characters of the string) maximal number of times. For example, for string s = "BBAABBBA" the answer is two-gram "BB", which contained in s three times. In other words, find any most frequent two-gram.
+You are given a string s consisting of n capital Latin letters. Your task is to find any
+two-gram contained in the given string as a substring (i.e. two consecutive characters of the
+string) maximal number of times. For example, for string s = "BBAABBBA" the answer is two-gram
+"BB", which contained in s three times. In other words, find any most frequent two-gram.
 """
 
 """
 Accepted
-Time Complexity : O(n).
-Space Complexity : O(1).
-Solution Explantion : For every substring s of length 2, iterate over the latin string and count how many occurrences it has. Keep track of the substring s with the largest mode.
+Time Complexity: O(n).
+Space Complexity: O(1).
+Solution Explantion:
+    For every substring s of length 2, iterate over the latin string and count how many
+    occurrences it has. Keep track of the substring s with the largest mode.
 """
 from sys import stdin, stdout
 
