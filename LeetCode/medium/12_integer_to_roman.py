@@ -1,10 +1,6 @@
 """
-Accepted
-Time complexity : O(n)
-Space complexity : O(n)
-"""
+https://leetcode.com/problems/integer-to-roman/
 
-"""
 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 Symbol       Value
@@ -25,6 +21,15 @@ Roman numerals are usually written largest to smallest from left to right. Howev
     C can be placed before D (500) and M (1000) to make 400 and 900.
 
 Given an integer, convert it to a roman numeral. Input is guaranteed to be within the range from 1 to 3999.
+"""
+
+"""
+Accepted
+Time complexity: O(n)
+Space complexity: O(n)
+Solution Explanation:
+    Greedily try to use the largest roman number available <= num, decrementing
+    our num by that value at each successful attempt.
 """
 
 

@@ -1,16 +1,26 @@
 """
-    Accepted
-    Time Complexity : O(n^2).
-    Space Complexity : O(n).
-"""
+https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/
 
-"""
 Given a string s that consists of lower case English letters and brackets.
 
 Reverse the strings in each pair of matching parentheses, starting from the innermost one.
 
 Your result should not contain any bracket.
 Parantheses will always be balanced if they exist.
+"""
+
+"""
+Accepted
+Time Complexity : O(n^2)
+Space Complexity : O(n)
+Solution Explanation:
+    Find the first ")", keeping track of the last "(" we've seen.
+    Reverse the characters between theese parentheses.
+    Update the position of "visited" / already used parentheses while reversing.
+    (i.e. "(a())" -> "(()a)" causes the used parentheses go from index 2 to 1).
+    Now continually devrement the "(" pointer to find the previous open paren.
+
+    Increment the pointer looking for ")" and repeat.
 """
 
 

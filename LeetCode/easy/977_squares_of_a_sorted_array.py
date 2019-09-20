@@ -1,3 +1,21 @@
+"""
+https://leetcode.com/problems/squares-of-a-sorted-array/
+
+Given an array of integers A sorted in non-decreasing order,
+return an array of the squares of each number, also in sorted non-decreasing order.
+"""
+
+"""
+Accepted
+Time Complexity: O(n)
+Space Complexity: O(n)
+Solution Explanation:
+    Iterate through the array, if A[i] is negative, add its square to a negative list.
+    If A[i] is positive, add it to a positive list.
+    Merge the two sorted arrays.
+"""
+
+
 class Solution:
     def sortedSquares(self, A: List[int]) -> List[int]:
         squaredList = []

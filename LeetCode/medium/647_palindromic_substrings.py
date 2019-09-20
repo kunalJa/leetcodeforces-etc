@@ -1,15 +1,18 @@
 """
-Accepted
-Time complexity : O(n)
-Space complexity : O(n)
-Solution explanation : A substring s[i:j] is a palindrome if s[i] == s[j] and s[i+1:j-1]
-is a palindrome.
-"""
+https://leetcode.com/problems/palindromic-substrings/
 
-"""
 Given a string, your task is to count how many palindromic substrings in this string.
 
 The substrings with different start indexes or end indexes are counted as different substrings even they consist of same characters.
+"""
+
+"""
+Accepted
+Time complexity: O(n)
+Space complexity: O(n)
+Solution explanation:
+    A substring s[i:j] is a palindrome if s[i] == s[j] and s[i+1:j-1]
+    is a palindrome.
 """
 
 

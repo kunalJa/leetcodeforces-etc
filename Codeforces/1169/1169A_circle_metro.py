@@ -3,11 +3,13 @@ https://codeforces.com/contest/1169/problem/A
 
 The circle line of the Roflanpolis subway has n stations.
 
-There are two parallel routes in the subway.
-The first one visits stations in order 1 -> 2 -> … -> n -> 1 -> 2 -> …
-The second route visits stations in order n -> n−1 -> … -> 1 -> n -> -> …
-All trains depart their stations simultaneously, and it takes exactly 1 minute to arrive at the
-next station.
+There are two parallel routes in the subway:
+    The first one visits stations in order 1 -> 2 -> … -> n -> 1 -> 2 -> …
+    The second route visits stations in order n -> n−1 -> … -> 1 -> n -> -> …
+
+All trains depart their stations simultaneously.
+It takes exactly 1 minute to arrive at the next station.
+
 Two toads live in this city, their names are Daniel and Vlad.
 Daniel is currently in a train of the first route at station a and will exit the
 subway when his train reaches station x.

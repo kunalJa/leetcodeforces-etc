@@ -1,3 +1,22 @@
+"""
+https://leetcode.com/problems/merge-two-sorted-lists/
+
+Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+"""
+
+"""
+Accepted
+Time Complexity: O(n)
+Space Complexity: O(n) as we have to return a new list
+Solution Explanation:
+    The merge step of merge-sort.
+    Use a pointer for each list. Compare the value currently pointed at in list 1
+    with that in list 2. Put the smaller element into the new list and then increment
+    the pointer forward in the list we have just pulled from. Similarly, always
+    increment the pointer for our new list.
+"""
+
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
@@ -7,7 +26,7 @@
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        current = ListNode(None) # dummy variable
+        current = ListNode(None)  # dummy variable
         head = current
 
         while l1 is not None or l2 is not None:

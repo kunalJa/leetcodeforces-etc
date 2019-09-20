@@ -10,8 +10,8 @@ such that in each given pair at least one integer is equal to x or y.
 
 """
 Accepted
-Time Complexity: O(n).
-Space Complexity: O(1).
+Time Complexity: O(n)
+Space Complexity: O(1)
 Solution Explantion:
     No matter what, the solution will contain an x or y from the first pair.
     Then we look for the first pair that does not contain that x or y and check to see
@@ -48,8 +48,8 @@ def find_union_universal_vertex(edges) -> str:
 def dp_probability_rule_of_sum(value_upperbound: int, edges) -> str:
     """
     Time Limit Exceeded
-    Time Complexity: O(n^2).
-    Space Complexity: O(n^2).
+    Time Complexity: O(n^2)
+    Space Complexity: O(n^2)
     Solution Explantion:
         The generalized rule of sums is defined as: P(A U B) = P(A) + P(B) - P(AB).
         We count the number of occurences of each value and pair in the edge list.

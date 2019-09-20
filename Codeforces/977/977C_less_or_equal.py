@@ -8,8 +8,8 @@ such that exactly k elements of given sequence are less than or equal to x.
 
 """
 Accepted
-Time Complexity: O(nlogn).
-Space Complexity: O(1).
+Time Complexity: O(nlogn)
+Space Complexity: O(1)
 Solution Explanation:
     Sort the sequence and find the kth largest number.
     Iterate over the array to ensure that this number is not bloated by duplicates.

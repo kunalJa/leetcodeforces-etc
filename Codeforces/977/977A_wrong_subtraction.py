@@ -13,9 +13,10 @@ Your task is to print the result after all k subtractions.
 
 """
 Accepted
-Time Complexity: O(n).
-Space Complexity: O(1).
-Solution Explantion: Apply tanya's subtraction algorithm to x y times.
+Time Complexity: O(n)
+Space Complexity: O(1)
+Solution Explantion:
+    Apply tanya's subtraction algorithm to x y times.
 """
 from sys import stdin, stdout
 

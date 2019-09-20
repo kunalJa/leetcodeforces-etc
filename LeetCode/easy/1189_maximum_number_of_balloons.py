@@ -1,13 +1,23 @@
 """
-    Accepted
-    Time Complexity : O(n).
-    Space Complexity : O(n).
+https://leetcode.com/problems/maximum-number-of-balloons/
+
+Given a string text, you want to use the characters of text to form as
+many instances of the word "balloon" as possible.
+
+You can use each character in text at most once.
+Return the maximum number of instances that can be formed.
 """
 
 """
-Given a string text, you want to use the characters of text to form as many instances of the word "balloon" as possible.
+Accepted
+Time Complexity: O(n)
+Space Complexity: O(n)
+Solution Explanation:
+    Create a histogram of the frequencies of the characters "b, "a",
+    "l"," "o", and "n" in the input text.
 
-You can use each character in text at most once. Return the maximum number of instances that can be formed
+    Try to reduce the frequency of all characters at once, if
+    that is not possible, we can no longer create the word "balloon".
 """
 
 

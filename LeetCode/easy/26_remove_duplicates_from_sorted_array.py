@@ -1,13 +1,19 @@
 """
-Accepted
-Time complexity : O(n)
-Space complexity : O(1)
-"""
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
-"""
 Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
 
 Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+"""
+
+"""
+Accepted
+Time complexity: O(n)
+Space complexity: O(1)
+Solution Explanation:
+    Using a slow pointer, we can keep track of the unique array built so far.
+    We then continue iterating through the array swapping with the slow pointer
+    each time we encounter a new element.
 """
 
 
@@ -27,8 +33,8 @@ class Solution:
     def removeDuplicates_first_attempt(self, nums: List[int]) -> int:
         """
         Accepted
-        Space complexity : O(1) once a wikisort is implemented.
-        Time complexity : O(n lg n) if the array needs to remain sorted, O(n) otherwise.
+        Time complexity: O(n lg n) if the array needs to remain sorted, O(n) otherwise.
+        Space complexity: O(1) once a wikisort is implemented.
         """
         n = len(nums)
         duplicates = 0

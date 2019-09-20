@@ -12,8 +12,8 @@ string) maximal number of times. For example, for string s = "BBAABBBA" the answ
 
 """
 Accepted
-Time Complexity: O(n).
-Space Complexity: O(1).
+Time Complexity: O(n)
+Space Complexity: O(1)
 Solution Explantion:
     For every substring s of length 2, iterate over the latin string and count how many
     occurrences it has. Keep track of the substring s with the largest mode.
