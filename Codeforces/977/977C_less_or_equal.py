@@ -39,14 +39,15 @@ def kth_largest_integer(k: int, sequence) -> int:
 
 def kth_largest_integer_no_duplicates(k: int, sequence) -> int:
     """
-    Solution Explantion :
-        Using an algorithm based off of quick sort, we are partitioning the array several times
-        to try and select the kth largest integer in the array. When partitioning, we use a
-        unique algorithm to ensure that the partition can happen in O(end - start) time via
-        swapping larger elements to the end of the array and moving the partiotion forward when
-        considering smaller elements.
+    Solution Explantion:
+        Using an algorithm based off of quick sort, we are partitioning the array
+        several times to try and select the kth largest integer in the array.
+        When partitioning, we use a unique algorithm to ensure that the partition can
+        happen in O(end - start)time via swapping larger elements to the end of the
+        array and moving the partiotion forward when considering smaller elements.
 
-    Unfortunately, I couldn't get this solution to account for duplicates any faster than O(nlogn) so I abandoned it for now.
+    Unfortunately, I couldn't get this solution to account for duplicates any faster
+    than O(nlogn) so I abandoned it for now.
     """
     start = 0
     end = len(sequence) - 1
