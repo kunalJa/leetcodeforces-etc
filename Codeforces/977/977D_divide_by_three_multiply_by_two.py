@@ -37,6 +37,28 @@ Solution Explanation:
 from sys import stdin, stdout
 
 
+def rearrage_polycarp(n: int, sequence):
+    polys_seq = set(sequence)
+
+    # Find the elements x of the sequence for which x/2 and 3x don't exist
+    ordered_seq = [
+        num
+        for num in sequence
+        if not (((num % 2 == 0) and (num // 2 in polys_seq)) or 3 * num in polys_seq)
+    ]
+    n -= 1
+    i = 0
+    while n:
+        if 2 * ordered_seq[i] in polys_seq:
+            ordered_seq.append(2 * ordered_seq[i])
+        else:
+            ordered_seq.append(ordered_seq[i] // 3)
+        n -= 1
+        i += 1
+
+    return ordered_seq
+
+
 def rearrage_polycarp_math_and_sorting_solution(n: int, sequence):
     """
     Accepted
@@ -68,34 +90,45 @@ def rearrage_polycarp_math_and_sorting_solution(n: int, sequence):
     return [num[1] for num in power_of_3]
 
 
-def rearrage_polycarp(n: int, sequence):
-    polys_seq = set(sequence)
+def rearrage_polycarp_backtracking(n: int, sequence):
+    """
+    Accepted
+    Time Complexity: O(n^2)
+    Space Complexity: O(n^2)
+    Solution Explanation:
+        Recursive backtracking that tries out each number in the sequence as the starting number.
+        Naive solution that doesn't take into account any of the unique mathematical properties
+        that we have realized through the other solutions. For example, this solution uses a "seen"
+        set to dissallow adding values to the path more than once (but we know that once you reach
+        a given number, you can never reach that number again with just 2x and 1/3x as operations).
+    """
+    poly = set(sequence)
 
-    # Find the elements x of the sequence for which x/2 and 3x don't exist
-    ordered_seq = [
-        num
-        for num in sequence
-        if not (((num % 2 == 0) and (num // 2 in polys_seq)) or 3 * num in polys_seq)
-    ]
-    n -= 1
+    def recurse(start: int, path=[], seen=set()) -> bool:
+        if (start not in poly) or (start in seen):
+            return []
+
+        path.append(start)
+        seen.add(start)
+        if len(recurse(2 * start, path, seen)) == n:
+            return path
+        if (start % 3 == 0) and (len(recurse(start // 3, path, seen)) == n):
+            return path
+        if len(path) != n:
+            # backtrack
+            seen.remove(path.pop())
+
+        return path
+
     i = 0
-    while n:
-        if 2 * ordered_seq[i] in polys_seq:
-            ordered_seq.append(2 * ordered_seq[i])
-        else:
-            ordered_seq.append(ordered_seq[i] // 3)
-        n -= 1
+    while i < n:
+        path = recurse(sequence[i], [], set())
+        if path:
+            return path
         i += 1
-
-    return ordered_seq
 
 
 if __name__ == "__main__":
     n = int(stdin.readline().rstrip())
     sequence = [int(x) for x in stdin.readline().rstrip().split(" ")]
-    stdout.write(
-        " ".join(
-            str(num) for num in rearrage_polycarp_math_and_sorting_solution(n, sequence)
-        )
-        + "\n"
-    )
+    stdout.write(" ".join(str(num) for num in rearrage_polycarp(n, sequence)) + "\n")
