@@ -86,6 +86,7 @@ class StreamChecker:
         Adds suffix links to to the passed in trie.
         The blue arcs can be computed in linear time by repeatedly traversing the blue arcs until
         the traversing node has a child matching the character of the target node.
+        Green arcs can be computed by following blue arcs and memoizing whether or not they lead to a real node.
         """
         q = deque()
         q.append(root)
@@ -120,6 +121,7 @@ class StreamChecker:
             q.extend(current.children.values())
 
     def query(self, letter: str) -> bool:
+        """Returns true if the lask k >= 1 letters exist in the input words."""
         if letter in self.current.children:
             self.current = self.current.children[letter]
         else:
