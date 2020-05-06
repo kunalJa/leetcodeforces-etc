@@ -18,13 +18,22 @@
   other approach (which has time O(n) and space O(1)).
 -}
 
-import Data.List (inits, tails)
+
+slidingWindow :: [Int] -> Int -> Int -> Int -> Int -> Int -> Int -> Int
+slidingWindow sqs d m i count cumSum len
+  | i == len = count
+  | otherwise = slidingWindow sqs d m (i + 1) newCount newCumSum len
+  where newCumSum = cumSum + (sqs !! i) - (sqs !! (i - m)) -- Need O(1) array access to get O(N) performance
+        newCount = if newCumSum == d then count + 1 else count
 
 
 countBirthdayChocolate :: ([Int], Int, Int) -> Int
+countBirthdayChocolate (sqs, d, m) = slidingWindow (0:sqs) d m m 0 (sum $ take (m-1) sqs) ((length sqs)+1)
+{- This is how I did it initally, but now I implemented it recursively above.
 countBirthdayChocolate (sqs, d, m) = length . filter (\x -> sum x == d) $ mLenSubseqs
   where contigSubseqs = concatMap inits . tails $ sqs
         mLenSubseqs   = filter (\x -> length x == m) contigSubseqs
+-}
 
 
 unpackInput :: [Int] -> ([Int], Int, Int)
